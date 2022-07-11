@@ -1,3 +1,5 @@
+import '../styles/Home.scss'
+
 export default function Home () {
     let audio = new Audio("/greg.mp3")
 
@@ -6,10 +8,10 @@ export default function Home () {
       };
     
     return(
-        <div>
+        <div className="Home">
             <h2>Vos sons : </h2>
 
-            <button onClick={start}>Play</button>
+            <button className="Home_btn" onClick={start}>Play</button>
 
             <audio controls src="/greg.mp3" />
 
