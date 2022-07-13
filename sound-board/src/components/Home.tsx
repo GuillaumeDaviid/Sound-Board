@@ -1,12 +1,12 @@
 import React from 'react'
 // @ts-ignore
-import {songs} from '../data/songs.ts'
+import {sound} from '../data/songs.ts'
 import '../styles/Home.scss'
 
 export default function Home () {
     //let audio = new Audio("/greg.mp3")
 
-   const card = songs.map((data) => {
+   const card = sound.map((data) => {
     var audio = new Audio(data.src);
     return(
       <div>
@@ -21,7 +21,7 @@ export default function Home () {
    }
    )
 
-    console.log(songs)
+    console.log(sound)
   
 
       const start = (audio) => {

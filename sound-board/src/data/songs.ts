@@ -1,4 +1,4 @@
-export const songs = [
+export const sound = [
     {
         id: 1,
         name : "il est de retour",
