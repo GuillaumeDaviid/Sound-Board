@@ -1,41 +1,57 @@
-import { useState, useEffect } from 'react';
+import React from 'react'
 // @ts-ignore
-import {songs} from '../song/songs.ts'
+import {songs} from '../data/songs.ts'
 import '../styles/Home.scss'
 
 export default function Home () {
-    const [playing, setPlaying] = useState(false);
-    let audio = new Audio("/greg.mp3")
+    //let audio = new Audio("/greg.mp3")
 
-    console.log(audio.paused)
+   const card = songs.map((data) => {
+    var audio = new Audio(data.src);
+    return(
+      <div>
+    <button className="Home_btn" onClick={() => start(audio)}>Play</button>
+    <div className='Home_player'>
+        <button onClick={() => pause(audio)}>Pause</button>
+        <button onClick={() => load(audio)}>Stop</button>
+    </div>
+    </div>
+    
+    )
+   }
+   )
+
+    console.log(songs)
   
 
-      const start = () => {
+      const start = (audio) => {
         audio.play()
       };
 
-      const pause = () => {
+      const pause = (audio) => {
         audio.pause();
       }
 
-      const load = () => {
+      const load = (audio) => {
         audio.load()
       }
     
     return(
         <div className="Home">
             <h2>Vos sons : </h2>
+            {card}
 
-            <button className="Home_btn" onClick={start}>Play</button>
-            
-
+            {/*<button className="Home_btn" onClick={start}>Play</button>*/}
+            {/*
+            <div className='audio-player'>
             <audio controls src="/greg.mp3" />
+            </div>
 
             <div className='Home_player'>
                 <button onClick={pause}>Pause</button>
                 <button onClick={load}>Stop</button>
             </div>
-
+    */}
         </div>
     )
 }
