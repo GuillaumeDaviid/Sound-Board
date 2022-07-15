@@ -1,0 +1,18 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_title {
+        margin-left: 50px;
+    }
+
+    &_nav {
+        margin-right: 200px;
+        
+        &-link {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}

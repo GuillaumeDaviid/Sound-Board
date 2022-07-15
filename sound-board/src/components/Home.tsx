@@ -12,8 +12,8 @@ export default function Home () {
       <div>
     <button className="Home_btn" onClick={() => start(audio)}>Play</button>
     <div className='Home_player'>
-        <button onClick={() => pause(audio)}>Pause</button>
-        <button onClick={() => load(audio)}>Stop</button>
+        <button onClick={() => pause(audio)} className="Home_control">Pause</button>
+        <button onClick={() => load(audio)} className="Home_control">Stop</button>
     </div>
     </div>
     
@@ -39,19 +39,9 @@ export default function Home () {
     return(
         <div className="Home">
             <h2>Vos sons : </h2>
+            <div className='Home_card'>
             {card}
-
-            {/*<button className="Home_btn" onClick={start}>Play</button>*/}
-            {/*
-            <div className='audio-player'>
-            <audio controls src="/greg.mp3" />
             </div>
-
-            <div className='Home_player'>
-                <button onClick={pause}>Pause</button>
-                <button onClick={load}>Stop</button>
-            </div>
-    */}
         </div>
     )
 }
