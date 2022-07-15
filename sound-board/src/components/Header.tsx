@@ -1,12 +1,15 @@
 import React from 'react'
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import '../styles/Header.scss'
 
 
 export default function Header () {
     return(
-        <div>
-            <h1>SOUND BOARD</h1>
-            <Link to="/">Home</Link>
+        <div className='Header'>
+            <h1 className='Header_title'>SOUND BOARD</h1>
+            <div className='Header_nav'>
+            <Link to="/" className='Header_nav-link'>Home</Link>
+            </div>
         </div>
     )
 }

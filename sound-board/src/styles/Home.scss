@@ -3,10 +3,6 @@
         width: 300px;
         height: 200px;
         cursor: pointer;
-        /*
-        border: 5px solid transparent;
-        border-radius: 20px;
-        border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 5;*/
         color: #313149;
         padding: 10px;
         margin: 75px 0;
@@ -28,5 +24,28 @@
             -webkit-mask-composite: xor;
             mask-composite: exclude;
         }
+    }
+
+    &_card {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    &_control {
+        width: 100px;
+        height: 50px;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 10px;
+        border-color: violet;
+    }
+
+    &_player {
+        margin-top: -20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
     }
 }
