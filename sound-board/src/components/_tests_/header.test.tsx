@@ -1,6 +1,6 @@
 import React from 'react'
 // @ts-ignore
-import Header from '../components/Header.tsx'
+import Header from '../Header.tsx'
 import {  render, screen, fireEvent } from '@testing-library/react';
 import {BrowserRouter as Router} from 'react-router-dom';
 
@@ -45,5 +45,16 @@ describe('Header', () => {
         const home = screen.getByText('Home');
         fireEvent.click(home);
         expect(global.window.location.pathname).toEqual('/');
+    })
+
+    test('Should have "Ajouter"', async () => {
+        render(
+            <Router>
+            <Header/>
+            </Router>
+        );
+
+        const add = screen.getByText('Ajouter');
+        expect(add).toBeInTheDocument();
     })
 })

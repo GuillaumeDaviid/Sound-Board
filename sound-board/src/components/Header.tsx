@@ -8,7 +8,8 @@ export default function Header () {
         <div className='Header'>
             <h1 className='Header_title'>SOUND BOARD</h1>
             <div className='Header_nav'>
-            <Link to="/" className='Header_nav-link'>Home</Link>
+                <Link to="/" className='Header_nav-link'>Home</Link>
+                <Link to="/add" className='Header_nav-link'>Ajouter</Link>
             </div>
         </div>
     )

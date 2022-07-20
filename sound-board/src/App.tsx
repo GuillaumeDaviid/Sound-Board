@@ -5,6 +5,8 @@ import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Header from './components/Header.tsx'
 // @ts-ignore
 import Home from './components/Home.tsx'
+// @ts-ignore
+import Add from './components/Add.tsx'
 
 function App() {
   return (
@@ -13,6 +15,9 @@ function App() {
       <Header />
       <Routes>
          <Route path="/" element={<Home />} />
+      </Routes>
+      <Routes>
+         <Route path="/add" element={<Add />} />
       </Routes>
      
     </div>
