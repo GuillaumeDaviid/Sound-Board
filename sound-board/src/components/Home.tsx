@@ -2,10 +2,13 @@ import React from 'react'
 // @ts-ignore
 import {sound} from '../data/songs.ts'
 import '../styles/Home.scss'
+import data from '../data/data.json'
 
 export default function Home () {
     //let audio = new Audio("/greg.mp3")
 
+    console.log(data)
+/*
    const card = sound.map((data) => {
     var audio = new Audio(data.src);
     return(
@@ -19,7 +22,24 @@ export default function Home () {
     
     )
    }
+   )*/
+
+   const card = data.map((data) => {
+    var audio = new Audio(data.file);
+    return(
+      <div>
+    <button className="Home_btn" onClick={() => start(audio)}>Play</button>
+    <div className='Home_player'>
+        <button onClick={() => pause(audio)} className="Home_control">Pause</button>
+        <button onClick={() => load(audio)} className="Home_control">Stop</button>
+    </div>
+    </div>
+    
+    )
+   }
    )
+
+   
 
     console.log(sound)
   

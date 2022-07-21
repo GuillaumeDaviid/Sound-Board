@@ -1,0 +1,12 @@
+[
+    {
+        "id": "1",
+        "name" : "il est de retour",
+        "file": "/greg.mp3"
+    },
+    {
+        "id": "2",
+        "name" : "Alors peut etre",
+        "file": "/alors.mp3"
+    }
+]
