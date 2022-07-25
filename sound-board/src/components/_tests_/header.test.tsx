@@ -57,4 +57,16 @@ describe('Header', () => {
         const add = screen.getByText('Ajouter');
         expect(add).toBeInTheDocument();
     })
+
+    test('Should url = add when we click on "add"', async () => {
+        render(
+            <Router>
+            <Header/>
+            </Router>
+        );
+
+        const add = screen.getByText('Ajouter');
+        fireEvent.click(add);
+        expect(global.window.location.pathname).toEqual('/add');
+    })
 })
