@@ -1,6 +1,7 @@
 import React from 'react'
-import {  render, screen, fireEvent } from '@testing-library/react';
+import {  render, screen } from '@testing-library/react';
 import {BrowserRouter as Router} from 'react-router-dom';
+import data from '../../data/data.json';
 // @ts-ignore
 import Home from '../Home.tsx'
 
@@ -30,9 +31,10 @@ describe('Home', () => {
             <Home/>
             </Router>
         );
+        const length = data.length;
 
-        const home = screen.getByText('Play');
-        expect(home).toBeInTheDocument();
+        const home = screen.getAllByText('Play');
+        expect(home).toHaveLength(length);
     })
 
     test('Should have "pause" button', async () => {
@@ -41,9 +43,10 @@ describe('Home', () => {
             <Home/>
             </Router>
         );
+        const length = data.length;
 
-        const home = screen.getByText('Pause');
-        expect(home).toBeInTheDocument();
+        const home = screen.getAllByText('Pause');
+        expect(home).toHaveLength(length);
     })
 
     test('Should have "Stop" button', async () => {
@@ -53,19 +56,9 @@ describe('Home', () => {
             </Router>
         );
 
-        const home = screen.getByText('Stop');
-        expect(home).toBeInTheDocument();
-    })
-/*
-    test('Should url = Home when we click on "home"', async () => {
-        render(
-            <Router>
-            <Home/>
-            </Router>
-        );
+        const length = data.length;
 
-        const home = screen.getByText('Home');
-        fireEvent.click(home);
-        expect(global.window.location.pathname).toEqual('/');
-    })*/
+        const home = screen.getAllByText('Stop');
+        expect(home).toHaveLength(length);
+    })
 })
