@@ -8,6 +8,9 @@
     }
 
     &_nav {
+        width: 20vw;
+        display: flex;
+        justify-content: space-around;
         margin-right: 200px;
         
         &-link {
