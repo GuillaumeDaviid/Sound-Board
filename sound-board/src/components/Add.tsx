@@ -13,6 +13,7 @@ export default function Add () {
     return(
         <div className='Add'>
             <h1 className='Add_title'>Ajouter un son :</h1>
+            <form>
 
             <h2 className='Add_subTitle'>Nom : </h2>
             <input type="text" data-testid="name" onChange={handleChange}/>
@@ -21,7 +22,9 @@ export default function Add () {
             <input type="file" name="sound"
             accept="audio/mp3, " data-testid="file"></input>
         </div>
-            <button className='Add_button'>Ajouter</button>
+            <button type="submit" className='Add_button'>Ajouter</button>
+            </form>
         </div>
+        
     )
 }
