@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 ]
 {"id": "3", "name": "Alors peut etre 2", "file": "/alors.mp3"}
 */
-
+/*
 let fichier = fs.readFileSync('../src/data/data.json')
 var data = JSON.parse(fichier);
 data.push({"id": "3", "name": "Alors peut etre 2", "file": "/alors.mp3"});
@@ -41,6 +41,6 @@ let newData = JSON.stringify(data);
 
 
 fs.writeFileSync('../src/data/data.json', newData)
-console.log(data)
+console.log(data)*/
 
 module.exports = app;
