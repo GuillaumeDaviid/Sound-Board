@@ -10,6 +10,18 @@ export default function Add () {
         return setName(e.target.value)
      }
 
+    function submit() {
+        fetch('http://localhost:8000/' , {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(this.state)
+        })
+        .then((result) => result.json())
+        .then((info) => { console.log(info); })
+    }
+
     return(
         <div className='Add'>
             <h1 className='Add_title'>Ajouter un son :</h1>
@@ -22,7 +34,7 @@ export default function Add () {
             <input type="file" name="sound"
             accept="audio/mp3, " data-testid="file"></input>
         </div>
-            <button type="submit" className='Add_button'>Ajouter</button>
+            <button type="submit" className='Add_button' onSubmit={submit}>Ajouter</button>
             </form>
         </div>
         
