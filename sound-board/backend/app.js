@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+const fs = require('fs');
 
 // middlewares
 
@@ -16,5 +17,30 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
     res.json({message : 'Hello'});
 })
+
+/* 
+[
+    {
+        "id": "1",
+        "name" : "il est de retour",
+        "file": "/greg.mp3"
+    },
+    {
+        "id": "2",
+        "name" : "Alors peut etre",
+        "file": "/alors.mp3"
+    }
+]
+{"id": "3", "name": "Alors peut etre 2", "file": "/alors.mp3"}
+*/
+
+let fichier = fs.readFileSync('../src/data/data.json')
+var data = JSON.parse(fichier);
+data.push({"id": "3", "name": "Alors peut etre 2", "file": "/alors.mp3"});
+let newData = JSON.stringify(data);
+
+
+fs.writeFileSync('../src/data/data.json', newData)
+console.log(data)
 
 module.exports = app;
