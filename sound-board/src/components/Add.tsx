@@ -1,11 +1,11 @@
 import React from 'react'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import '../styles/Add.scss'
 
 export default function Add () {
 
-    const [name, setName] = useState()
-    const [fileName, setFileName] = useState()
+    const [name, setName] = useState<String>()
+    const [fileName, setFileName] = useState<String>()
 
     function handleChange(e) {
         return setName(e.target.value)
@@ -16,16 +16,20 @@ export default function Add () {
     }
 
     const handleSubmit = e => {
-    
-        fetch('http://localhost:3001/add' , {
+        e.preventDefault();
+        if (fileName) {
+            fetch('http://localhost:3001/add' , {
             method: "POST",
             headers: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify({"id": "4", "name" : name, "file" : `/${fileName}`})
+            body: JSON.stringify({"id": "4", "name" : name, "file" : `/${fileName.substr(12)}`})
         })
         .then((result) => result.json())
         .then((info) => { console.log(info); })
+        }
+    
+        
       };
     
 
