@@ -7,16 +7,15 @@ export default function Add () {
     const [name, setName] = useState<String>()
     const [fileName, setFileName] = useState<String>()
 
-    function handleChange(e) {
+    function handleChange(e:any) {
         return setName(e.target.value)
     }
 
-    function handleChangeFile(e) {
+    function handleChangeFile(e:any) {
         return setFileName(e.target.value)
     }
 
     const handleSubmit = e => {
-        e.preventDefault();
         if (fileName && name) {
             fetch('http://localhost:3001/add' , {
             method: "POST",
@@ -28,8 +27,6 @@ export default function Add () {
         .then((result) => result.json())
         .then((info) => { console.log(info); })
         }
-    
-        
       };
     
 
