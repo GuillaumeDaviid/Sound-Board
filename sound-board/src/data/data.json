@@ -1,12 +1,1 @@
-[
-    {
-        "id": "1",
-        "name" : "il est de retour",
-        "file": "/greg.mp3"
-    },
-    {
-        "id": "2",
-        "name" : "Alors peut etre",
-        "file": "/alors.mp3"
-    }
-]
+[{"id":"1","name":"il est de retour","file":"/greg.mp3"},{"id":"2","name":"Alors peut etre","file":"/alors.mp3"},{"id":"3","name":"Alors peut etre 2","file":"/alors.mp3"}]
