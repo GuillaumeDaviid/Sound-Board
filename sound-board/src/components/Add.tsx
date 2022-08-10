@@ -11,7 +11,7 @@ export default function Add () {
      }
 
     function submit() {
-        fetch('http://localhost:8000/' , {
+        fetch('/add' , {
             method: "POST",
             headers: {
                 'Content-type': 'application/json'
