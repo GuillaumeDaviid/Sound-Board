@@ -17,7 +17,7 @@ export default function Add () {
 
     const handleSubmit = e => {
         e.preventDefault();
-        if (fileName) {
+        if (fileName && name) {
             fetch('http://localhost:3001/add' , {
             method: "POST",
             headers: {

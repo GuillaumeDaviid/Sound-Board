@@ -14,9 +14,18 @@ app.use((req, res, next) => {
     next();
   });
 
+  app.post('/add',(req, res, next) => {
+    let fichier = fs.readFileSync('../src/data/data.json')
+    let data = JSON.parse(fichier);
+    data.push(req.body);
+    let newData = JSON.stringify(data);
+    fs.writeFileSync('../src/data/data.json', newData)
+})
+
 app.use((req, res, next) => {
     res.json({message : 'Hello'});
-})
+    })
+
 
 /* 
 [
@@ -31,7 +40,6 @@ app.use((req, res, next) => {
         "file": "/alors.mp3"
     }
 ]
-{"id": "3", "name": "Alors peut etre 2", "file": "/alors.mp3"}
 */
 /*
 let fichier = fs.readFileSync('../src/data/data.json')
